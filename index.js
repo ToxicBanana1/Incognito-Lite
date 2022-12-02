@@ -19,7 +19,7 @@ const server = http.createServer()
 
 server.on('request', async (req, res) => {
   if(bare.shouldRoute(req)) bare.routeRequest(req, res); else {
-    const asset = await fetch("https://amethystnetwork-dev.github.io/Incognito/static" + req.url);
+    const asset = await fetch("https://github.com/ToxicBanana1/sussusamogus/tree/main/static" + req.url);
     const body = new Buffer.from(await asset.arrayBuffer());
     res.writeHead(asset.status, { "Content-Type": asset.headers.get("content-type").split(";")[0] });
     res.end(body);
